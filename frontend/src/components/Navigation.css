@@ -1,0 +1,129 @@
+/* Navigation.css */
+
+.brand-text {
+  color: #6B21A8;
+}
+
+/* 상단바 로고의 숫자 '3'을 골드 색상으로 지정 */
+
+.brand-highlight {
+  color: #FBBF24;
+}
+
+/* 중앙 메뉴 정렬 */
+
+.nav-inner nav button:hover {
+  color: #121417;
+}
+
+.navigation {
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-inner {
+  justify-content: space-between;
+  max-width: 1120px;
+  height: 76px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0 32px;
+}
+
+.brand {
+  font-family: 'MungyeongGamhongApple', sans-serif;
+  letter-spacing: 0px !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 19px;
+  font-weight: 800;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+.nav-inner nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+}
+
+.nav-inner nav button {
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 10px 0;
+  border: 0;
+  background: none;
+  font-size: 14px;
+  color: #6b707b;
+}
+
+.nav-inner nav button.active {
+  color: #121417;
+  font-weight: 700;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #606772;
+}
+
+.profile svg {
+  background: #f0f1f3;
+  border-radius: 50%;
+  padding: 2px;
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width:850px) {
+  .profile>span {
+    display: none;
+  }
+}
+
+@media (max-width:580px) {
+  .nav-inner {
+    height: 64px;
+    padding: 0 18px;
+    gap: 14px;
+  }
+}
+
+@media (max-width:580px) {
+  .brand {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:580px) {
+  .nav-inner nav {
+    gap: 15px;
+  }
+}
+
+@media (max-width:580px) {
+  .nav-inner nav button {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:580px) {
+  .profile {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# macOS
+.DS_Store
+
+# 환경 변수
+.env
+.env.*
+!.env.example
+
+# AI Hub 원본 데이터
+data/raw/*
+!data/raw/README.md
+
+# AI Hub 데이터로 생성하는 기준 데이터
+data/references/*.npz
+data/references/*.json
+frontend/public/references/*.json
+
+# 음원
+frontend/public/audio/
+
+# 서버 실행 시 생성되는 DB
+data/danc3d.db
+data/danc3d.db-*
+
+# MediaPipe 모델
+models/mediapipe/*.task
+models/mediapipe/*.part
+
+# smoke test 보고서
+results/
+
+# 프론트엔드 설치·빌드·자동 복사 결과물
+frontend/node_modules/
+frontend/dist/
+frontend/public/mediapipe/
+
+# 편집기 설정
+.vscode/

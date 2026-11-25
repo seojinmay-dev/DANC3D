@@ -1,0 +1,139 @@
+:root {
+  --layout-nav-height: 77px;
+  --layout-footer-height: calc(48px + env(safe-area-inset-bottom, 0px));
+  --layout-width: 960px; /* 홈 제외 모든 페이지 통일 너비 (기존 1060px에서 더 컴팩트하게 통일) */
+  --layout-gap: 16px;
+}
+
+/* 홈 제외 모든 페이지(연습하기 포함) 영역을 동일하게 통일 */
+.main.page-main,
+.main.practice-main {
+  width: 100%;
+  max-width: var(--layout-width);
+  margin: 0 auto;
+  height: calc(100dvh - var(--layout-nav-height) - var(--layout-footer-height));
+  min-height: 0;
+  padding: 20px 24px 0;
+}
+
+/* 연습하기 페이지는 하단 푸터가 없으므로 높이만 100dvh - nav 로 맞춤 */
+.main.practice-main {
+  height: calc(100dvh - var(--layout-nav-height));
+  padding-bottom: 16px;
+}
+
+/* 홈 화면 전용: 내부 스크롤바를 없애고 필요 시 브라우저 맨 오른쪽 끝 스크롤 사용 */
+.main.home-main {
+  width: 100%;
+  max-width: var(--layout-width);
+  margin: 0 auto;
+  min-height: calc(100dvh - var(--layout-nav-height) - var(--layout-footer-height));
+  height: auto;
+  padding: 16px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-main .page-layout,
+.home-main .page-scroll {
+  height: auto;
+  overflow: visible;
+  padding: 0;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  gap: var(--layout-gap);
+}
+
+.page-heading,
+.page-toolbar {
+  flex-shrink: 0;
+}
+
+.page-heading > .page-title {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+.page-heading > .subtitle {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.page-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 일반 페이지 스크롤: 내용이 넘칠 때만 박스 바로 옆에 스크롤바 표시 */
+.page-scroll {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  padding: 4px 6px 20px 2px;
+  scroll-padding: 8px;
+}
+
+.page-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #dfe3e9;
+  background: transparent;
+}
+
+.page-actions > .button {
+  flex: 1;
+  min-width: 0;
+  min-height: 50px;
+}
+
+.page-actions > .camera-error {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.page-footer {
+  height: var(--layout-footer-height);
+  padding: 0 18px env(safe-area-inset-bottom, 0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-page .home {
+  width: min(100%, 480px);
+  margin: 0 auto !important;
+}
+
+@media (max-width: 580px) {
+  :root {
+    --layout-nav-height: 65px;
+    --layout-gap: 12px;
+  }
+  .main.page-main,
+  .main.practice-main {
+    padding: 16px 18px 0;
+  }
+  .page-heading > .page-title {
+    font-size: 22px;
+  }
+  .page-actions {
+    gap: 10px;
+  }
+}

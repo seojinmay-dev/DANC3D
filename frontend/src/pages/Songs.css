@@ -1,0 +1,47 @@
+.songs-page .catalog-meta {
+  margin: 0;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.songs-page .song-grid {
+  margin-bottom: 0;
+}
+
+.songs-selection-copy {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: baseline;
+}
+
+.songs-selection-copy > span {
+  color: #717986;
+  font-size: 13px;
+}
+
+.songs-selection-copy > strong {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.songs-page .page-actions > .button {
+  width: auto;
+  min-width: 160px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 580px) {
+  .songs-selection-copy {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .songs-page .page-actions > .button {
+    min-width: 120px;
+  }
+  .songs-page .catalog-meta > span:last-child {
+    display: none;
+  }
+}

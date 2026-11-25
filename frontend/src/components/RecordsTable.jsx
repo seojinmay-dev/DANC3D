@@ -1,0 +1,4 @@
+import {formatRecordScore} from '../services/records.js';
+export default function RecordsTable({records,best=null}) {
+  return <div className="table-wrap"><table><thead><tr><th>번호</th><th>연습 날짜 · 시간</th><th>곡</th><th>속도</th><th>최종 점수</th><th>평가 표본</th></tr></thead><tbody>{records.map((r,i)=><tr key={r.session_id} data-session-id={r.session_id}><td>{i+1}</td><td><time dateTime={r.ended_at}>{new Date(r.ended_at).toLocaleString('ko-KR')}</time></td><td>{r.artist} · {r.title}</td><td>{r.playback_speed}x</td><td><strong>{formatRecordScore(r.score_100)}</strong>{r.score_100!==null&&' / 100'}{best!==null&&r.score_100===best&&<span className="record-badge">최고 기록</span>}</td><td>{r.valid_sample_count}개</td></tr>)}</tbody></table>{!records.length&&<p className="empty">아직 연습 기록이 없습니다. 첫 연습을 시작해보세요.</p>}</div>;
+}
